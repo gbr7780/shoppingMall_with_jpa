@@ -68,6 +68,17 @@
             <version>${querydsl.version}</version>
         </dependency>
 
+        <!-- Devtools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+
+        <!-- thymeleaf layout -->
+        <dependency>
+            <groupId>nz.net.ultraq.thymeleaf</groupId>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
+        </dependency>
 
     </dependencies>
 
