@@ -29,8 +29,8 @@ public class SecurityConfig {
     // 아래와 같이SecurityFilterChain 타입의 빈으로 대체
     @Bean
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
-        //http.formLogin().disable();
-        http.formLogin();
+        http.formLogin().disable();
+        //http.formLogin();
         return http.build();
     }
 }
