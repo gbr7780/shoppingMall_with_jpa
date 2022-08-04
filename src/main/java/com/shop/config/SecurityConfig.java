@@ -29,8 +29,12 @@ public class SecurityConfig {
     // 아래와 같이SecurityFilterChain 타입의 빈으로 대체
     @Bean
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
-        http.formLogin().disable();
-        //http.formLogin();
+        http
+                .formLogin()
+                .disable();
+//                .csrf()         // 스프링 시큐리티에서는 CSRF공격을 방어하기 위해서 POST방식의 데이터 전송에는 반드시 CSRF토큰이 있어야함
+//                .disable();
+
         return http.build();
     }
 }
