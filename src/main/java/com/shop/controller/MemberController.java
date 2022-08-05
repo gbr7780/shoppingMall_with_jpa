@@ -4,6 +4,7 @@ import com.shop.dto.MemberFormDto;
 import com.shop.entity.Member;
 import com.shop.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,9 +20,11 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class MemberController {
 
-    private final MemberService memberService;
+    @Autowired
+    private MemberService memberService;
 
-    private final PasswordEncoder passwordEncoder;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     // 회원 가입 로직
     @GetMapping(value = "/new")
@@ -44,6 +47,20 @@ public class MemberController {
         }
         return "redirect:/";
     }
+
+    //로그인 로직
+    @GetMapping(value = "/login")
+    public String loginMember(){
+        return "/member/memberLoginForm";
+    }
+    @GetMapping(value = "/login/error")
+    public String loginError(Model model){
+        model.addAttribute("loginErrorMsg","아이디 또는 비밀번호를 확인해주세요");
+        return "/member/memberLoginForm";
+    }
+
+
+
 
 
 }
