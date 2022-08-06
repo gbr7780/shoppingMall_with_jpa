@@ -36,9 +36,9 @@ public class SecurityConfig {
     // 아래와 같이SecurityFilterChain 타입의 빈으로 대체
     @Bean
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
-        http
+        http.formLogin()
 //                .csrf().disable()        // 스프링 시큐리티에서는 CSRF공격을 방어하기 위해서 POST방식의 데이터 전송에는 반드시 CSRF토큰이 있어야함
-                .formLogin()
+
                 .loginPage("/members/login")
                 .defaultSuccessUrl("/")
                 .usernameParameter("email")
@@ -49,10 +49,14 @@ public class SecurityConfig {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/members/logout"))
                 .logoutSuccessUrl("/");
 
+        http.authorizeRequests()
+                .mvcMatchers("/","/members/**","/item/**","/images/**").permitAll()
+                .mvcMatchers("/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated();
 
-//        auth
-//                .userDetailsService(memberService)
-//                .passwordEncoder(passwordEncoder());
+        http.exceptionHandling()
+                .authenticationEntryPoint(new CustomAuthenticationEntryPoint());
+
 
         return http.build();
     }
