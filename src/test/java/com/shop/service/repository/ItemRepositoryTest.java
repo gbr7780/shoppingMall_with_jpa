@@ -1,7 +1,8 @@
-package com.shop.repository;
+package com.shop.service.repository;
 
 import com.shop.constant.ItemSellStatus;
 import com.shop.entity.Item;
+import com.shop.repository.ItemRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
