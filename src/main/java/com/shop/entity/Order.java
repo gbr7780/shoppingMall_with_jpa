@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "orders")     // 정려할때 사용하는 order 키워드가 있으므로 테이블 이름은 orders로 지정
 @Getter @Setter
-public class Order {
+public class Order extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "order_id")
@@ -36,7 +36,7 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<OrderItem> orderItems = new ArrayList<>();    // 하나의 주문에는 여러개의 주문 상품을 갖으므로 List자료형 사용한다!
 
-    private LocalDateTime regTime;
-
-    private LocalDateTime updateTime;
+    // Auditing 이용해서 BaseEntity로 부터 regTime, updateTime, createBy, modifyBy 상속 받고 알아서 지정되므로 기존에 필드는 주석처리
+//    private LocalDateTime regTime;
+//    private LocalDateTime updateTime;
 }

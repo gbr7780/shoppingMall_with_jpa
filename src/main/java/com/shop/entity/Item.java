@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-public class Item {
+public class Item extends BaseEntity{
     @Id
     @Column(name="item_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,7 +35,7 @@ public class Item {
     @Enumerated(EnumType.STRING)   //@Enumrated는 enum타입 매핑시 사용함!
     private ItemSellStatus itemSellStatus;  //상품 판매 상태
 
-    private LocalDateTime regTime;      //등록 시간
-
-    private LocalDateTime updateTime;     //수정 시간
+    // Auditing 이용해서 BaseEntity로 부터 regTime, updateTime, createBy, modifyBy 상속 받고 알아서 지정되므로 기존에 필드는 주석처리
+//    private LocalDateTime regTime;
+//    private LocalDateTime updateTime;
 }

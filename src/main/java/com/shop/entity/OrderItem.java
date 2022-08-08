@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter
-public class OrderItem {
+public class OrderItem extends BaseEntity{
     @Id
     @GeneratedValue
     @Column(name = "order_item_id")
@@ -30,8 +30,8 @@ public class OrderItem {
     // 수량
     private int count;
 
-    private LocalDateTime regTime;
-
-    private LocalDateTime updateTime;
+    // Auditing 이용해서 BaseEntity로 부터 regTime, updateTime, createBy, modifyBy 상속 받고 알아서 지정되므로 기존에 필드는 주석처리
+//    private LocalDateTime regTime;
+//    private LocalDateTime updateTime;
 
 }
