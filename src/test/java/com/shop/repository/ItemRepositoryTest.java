@@ -1,4 +1,4 @@
-package com.shop.service.repository;
+package com.shop.repository;
 
 import com.shop.constant.ItemSellStatus;
 import com.shop.entity.Item;
