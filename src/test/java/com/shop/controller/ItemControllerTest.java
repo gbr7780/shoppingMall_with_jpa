@@ -1,8 +1,5 @@
 package com.shop.controller;
 
-import com.shop.dto.MemberFormDto;
-import com.shop.entity.Member;
-import com.shop.service.MemberService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +11,11 @@ import org.springframework.security.test.web.servlet.response.SecurityMockMvcRes
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import com.kiwi.shop.dto.MemberFormDto;
+import com.kiwi.shop.entity.Member;
+import com.kiwi.shop.service.MemberService;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 

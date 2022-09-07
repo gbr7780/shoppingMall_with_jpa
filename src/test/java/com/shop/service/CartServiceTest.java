@@ -1,14 +1,5 @@
 package com.shop.service;
 
-import com.shop.constant.ItemSellStatus;
-import com.shop.dto.CartItemDto;
-import com.shop.entity.CartItem;
-import com.shop.entity.Item;
-import com.shop.entity.Member;
-import com.shop.repository.CartItemRepository;
-import com.shop.repository.ItemRepository;
-import com.shop.repository.MemberRepository;
-import com.shop.repository.OrderRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,6 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.kiwi.constant.ItemSellStatus;
+import com.kiwi.shop.dto.CartItemDto;
+import com.kiwi.shop.entity.CartItem;
+import com.kiwi.shop.entity.Item;
+import com.kiwi.shop.entity.Member;
+import com.kiwi.shop.repository.CartItemRepository;
+import com.kiwi.shop.repository.ItemRepository;
+import com.kiwi.shop.repository.MemberRepository;
+import com.kiwi.shop.repository.OrderRepository;
+import com.kiwi.shop.service.CartService;
 
 import javax.persistence.EntityNotFoundException;
 

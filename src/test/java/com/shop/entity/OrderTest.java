@@ -1,10 +1,5 @@
 package com.shop.entity;
 
-import com.shop.constant.ItemSellStatus;
-import com.shop.repository.ItemRepository;
-import com.shop.repository.MemberRepository;
-import com.shop.repository.OrderItemRepository;
-import com.shop.repository.OrderRepository;
 import org.aspectj.weaver.ast.Or;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -13,6 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.kiwi.constant.ItemSellStatus;
+import com.kiwi.shop.entity.Item;
+import com.kiwi.shop.entity.Member;
+import com.kiwi.shop.entity.Order;
+import com.kiwi.shop.entity.OrderItem;
+import com.kiwi.shop.repository.ItemRepository;
+import com.kiwi.shop.repository.MemberRepository;
+import com.kiwi.shop.repository.OrderItemRepository;
+import com.kiwi.shop.repository.OrderRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;

@@ -1,11 +1,5 @@
 package com.shop.service;
 
-import com.shop.constant.ItemSellStatus;
-import com.shop.dto.ItemFormDto;
-import com.shop.entity.Item;
-import com.shop.entity.ItemImg;
-import com.shop.repository.ItemImgRepository;
-import com.shop.repository.ItemRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,6 +10,14 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.kiwi.constant.ItemSellStatus;
+import com.kiwi.shop.dto.ItemFormDto;
+import com.kiwi.shop.entity.Item;
+import com.kiwi.shop.entity.ItemImg;
+import com.kiwi.shop.repository.ItemImgRepository;
+import com.kiwi.shop.repository.ItemRepository;
+import com.kiwi.shop.service.ItemService;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;

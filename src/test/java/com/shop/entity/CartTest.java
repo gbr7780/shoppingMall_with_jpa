@@ -1,8 +1,5 @@
 package com.shop.entity;
 
-import com.shop.dto.MemberFormDto;
-import com.shop.repository.CartRepository;
-import com.shop.repository.MemberRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,6 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.kiwi.shop.dto.MemberFormDto;
+import com.kiwi.shop.entity.Cart;
+import com.kiwi.shop.entity.Member;
+import com.kiwi.shop.repository.CartRepository;
+import com.kiwi.shop.repository.MemberRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
